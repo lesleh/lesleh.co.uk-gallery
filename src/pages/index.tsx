@@ -1,6 +1,7 @@
 import * as React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, type HeadFC } from "gatsby";
+import {} from "gatsby/head";
 
 import "../index.css";
 
@@ -37,7 +38,12 @@ const IndexPage = ({ data }: any) => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>;
+export const Head: HeadFC = () => (
+  <>
+    <title>Home Page</title>
+    <meta name="description" content="Photo gallery for lesleh.co.uk"></meta>
+  </>
+);
 
 export const pageQuery = graphql`
   query {
