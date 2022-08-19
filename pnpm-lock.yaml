@@ -4,6 +4,7 @@ specifiers:
   '@types/node': ^17.0.45
   '@types/react': ^18.0.17
   '@types/react-dom': ^18.0.6
+  clsx: ^1.2.1
   gatsby: ^4.21.0
   gatsby-plugin-html-attributes: ^1.0.5
   gatsby-plugin-image: ^2.21.0
@@ -24,6 +25,7 @@ specifiers:
   typescript: ^4.7.4
 
 dependencies:
+  clsx: 1.2.1
   gatsby: 4.21.0_3o4eqhxxwetjrnr45xkuibp32m
   gatsby-plugin-image: 2.21.0_ekxpzxbr5fjzauh2artkk5dyre
   gatsby-plugin-manifest: 4.21.0_gatsby@4.21.0
@@ -3978,6 +3980,11 @@ packages:
   /clone/2.1.2:
     resolution: {integrity: sha512-3Pe/CF1Nn94hyhIYpjtiLhdCoEoz0DqQ+988E9gmeEdQZlojxnOb74wctFyuwWQHzqyf9X7C7MG8juUpqBJT8w==}
     engines: {node: '>=0.8'}
+
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
 
   /coa/2.0.2:
     resolution: {integrity: sha512-q5/jG+YQnSy4nRTV4F7lPepBJZ8qBNJJDBuJdoejDyLXgmL7IEo+Le2JDZudFTFt7mrCqIRaSjws4ygRCTCAXA==}

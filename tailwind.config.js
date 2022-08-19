@@ -5,7 +5,13 @@ module.exports = {
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        "fill-16": "repeat(auto-fill, minmax(8rem, 1fr))",
+        "fill-20": "repeat(auto-fill, minmax(5rem, 1fr))",
+        // etc.
+      },
+    },
   },
   plugins: [],
 };

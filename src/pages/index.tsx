@@ -3,23 +3,41 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, type HeadFC } from "gatsby";
 
 import "../index.css";
+import clsx from "clsx";
+
+interface Props {
+  data: {
+    allFile: {
+      nodes: any;
+    };
+  };
+}
+
+const getImageSize = (name: string) => /_([a-z]+)/.exec(name)?.[1] || "medium";
 
 const GalleryImage = ({ node, ...props }: any) => {
-  const image = getImage(node);
+  const imageSize = getImageSize(node.name);
+  const image = getImage(node[imageSize] || node.medium);
+  const classNames = clsx("aspect-square", {
+    "col-span-1 row-span-1": imageSize === "small",
+    "md:col-span-2 md:row-span-2": imageSize === "medium",
+    "md:col-span-2 md:row-span-2 lg:col-span-3 lg:row-span-3":
+      imageSize === "large",
+  });
   return (
-    <GatsbyImage image={image!} alt="" {...props} className="aspect-square" />
+    <GatsbyImage
+      image={image!}
+      alt={node.name}
+      {...props}
+      className={classNames}
+    />
   );
 };
 
 const Gallery = ({ nodes }: any) => (
-  <div className="grid grid-cols-4 gap-4">
+  <div className="grid grid-cols-fill-16 gap-4 m-4 grid-flow-dense">
     {nodes.map((node: any) => (
       <>
-        <GalleryImage key={node.name} node={node} />
-        <GalleryImage key={node.name} node={node} />
-        <GalleryImage key={node.name} node={node} />
-        <GalleryImage key={node.name} node={node} />
-        <GalleryImage key={node.name} node={node} />
         <GalleryImage key={node.name} node={node} />
       </>
     ))}
@@ -28,7 +46,7 @@ const Gallery = ({ nodes }: any) => (
 
 const IndexPage = ({ data }: any) => {
   return (
-    <main className="text-red-500">
+    <main>
       text
       <Gallery nodes={data.allFile.nodes} />
     </main>
@@ -49,8 +67,14 @@ export const pageQuery = graphql`
     allFile(filter: { sourceInstanceName: { eq: "photos" } }) {
       nodes {
         name
-        childImageSharp {
-          gatsbyImageData(width: 300, formats: [AUTO, WEBP, AVIF])
+        small: childImageSharp {
+          gatsbyImageData(width: 200, formats: [AUTO, WEBP, AVIF])
+        }
+        medium: childImageSharp {
+          gatsbyImageData(width: 400, formats: [AUTO, WEBP, AVIF])
+        }
+        large: childImageSharp {
+          gatsbyImageData(width: 600, formats: [AUTO, WEBP, AVIF])
         }
       }
     }
