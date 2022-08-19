@@ -10,6 +10,12 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
+    {
+      resolve: "gatsby-plugin-html-attributes",
+      options: {
+        lang: "en-GB",
+      },
+    },
     `gatsby-plugin-pnpm`,
     "gatsby-plugin-postcss",
     {

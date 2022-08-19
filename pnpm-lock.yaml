@@ -5,6 +5,7 @@ specifiers:
   '@types/react': ^18.0.17
   '@types/react-dom': ^18.0.6
   gatsby: ^4.21.0
+  gatsby-plugin-html-attributes: ^1.0.5
   gatsby-plugin-image: ^2.21.0
   gatsby-plugin-manifest: ^4.21.0
   gatsby-plugin-pnpm: ^1.2.10
@@ -39,6 +40,7 @@ devDependencies:
   '@types/node': 17.0.45
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
+  gatsby-plugin-html-attributes: 1.0.5
   gatsby-plugin-pnpm: 1.2.10_gatsby@4.21.0
   gatsby-plugin-preact: 6.21.0_dzly2ptck5qkx6ufq6px5bx37i
   preact: 10.10.3
@@ -3589,6 +3591,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /babel-runtime/6.26.0:
+    resolution: {integrity: sha512-ITKNuq2wKlW1fJg9sSW52eepoYgZBggvOAHC0u/CYu/qxQ9EVzThCgR69BnSXLHjy2f7SY5zaQ4yt7H9ZVxY2g==}
+    dependencies:
+      core-js: 2.6.12
+      regenerator-runtime: 0.11.1
+    dev: true
+
   /backo2/1.0.2:
     resolution: {integrity: sha512-zj6Z6M7Eq+PBZ7PQxl5NT665MvJdAkzp0f60nAJ+sLaSCBPMwVak5ZegFbgVCzFcCJTKFoMizvM5Ld7+JrRJHA==}
 
@@ -4150,6 +4159,12 @@ packages:
   /core-js-pure/3.24.1:
     resolution: {integrity: sha512-r1nJk41QLLPyozHUUPmILCEMtMw24NG4oWK6RbsDdjzQgg9ZvrUsPBj1MnG0wXXp1DCDU6j+wUvEmBSrtRbLXg==}
     requiresBuild: true
+
+  /core-js/2.6.12:
+    resolution: {integrity: sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==}
+    deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+    requiresBuild: true
+    dev: true
 
   /core-js/3.24.1:
     resolution: {integrity: sha512-0QTBSYSUZ6Gq21utGzkfITDylE8jWC9Ne1D2MrhvlsZBI1x39OdDIVbzSqtgMndIy6BlHxBXpMGqzZmnztg2rg==}
@@ -5806,6 +5821,12 @@ packages:
       '@parcel/transformer-json': 2.6.2_@parcel+core@2.6.2
       '@parcel/transformer-raw': 2.6.2_@parcel+core@2.6.2
       '@parcel/transformer-react-refresh-wrap': 2.6.2_@parcel+core@2.6.2
+
+  /gatsby-plugin-html-attributes/1.0.5:
+    resolution: {integrity: sha512-5u9AHfwxYuhl/QT+cI/r0+1oCKba/LPB6PHUaJN65swPOPrsAiNAj++hTSCs3CG3fITcR8Oorcn6hm6rN+uVAg==}
+    dependencies:
+      babel-runtime: 6.26.0
+    dev: true
 
   /gatsby-plugin-image/2.21.0_ekxpzxbr5fjzauh2artkk5dyre:
     resolution: {integrity: sha512-vRPGlw1q7tCKKx1UK03398Gi1c80uzaGj8RjkJ1I3BvIo3Ics8+OUgR0QUtLBmCv9b7qyL1nwA5DsmDmi0Dg4w==}
@@ -9357,6 +9378,10 @@ packages:
 
   /regenerate/1.4.2:
     resolution: {integrity: sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==}
+
+  /regenerator-runtime/0.11.1:
+    resolution: {integrity: sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==}
+    dev: true
 
   /regenerator-runtime/0.13.9:
     resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
