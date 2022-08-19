@@ -1,7 +1,6 @@
 import * as React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, type HeadFC } from "gatsby";
-import {} from "gatsby/head";
 
 import "../index.css";
 
